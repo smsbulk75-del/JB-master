@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>J B MASTER – Fashion Clothing Brand | Modern & Comfortable Apparel</title>
+  <meta name="description" content="J B MASTER – Fashion-focused clothing brand offering stylish, comfortable, and quality apparel. Modern designs, premium fabrics, affordable pricing. Shop casual wear and trendy outfits.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fefefe;
+      color: #1e1e2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header */
+    .header {
+      background: #ffffff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03), 0 1px 0 rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(0px);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      gap: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #1e1e2a 0%, #2d2f3e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .brand-tag {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #6b6b7a;
+      background: #f0f0f0;
+      padding: 4px 12px;
+      border-radius: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c2c3a;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #c27a2e;
+    }
+
+    .btn-primary {
+      background: #1e1e2a;
+      color: white;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: #c27a2e;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #1e1e2a;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: 0.2s;
+      text-decoration: none;
+      color: #1e1e2a;
+    }
+
+    .btn-outline:hover {
+      background: #1e1e2a;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(120deg, #f9f6f0 0%, #fffaf5 100%);
+      padding: 70px 0 80px;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1.2;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1e1e2a;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #4a4a5a;
+      margin-bottom: 28px;
+    }
+
+    .hero-highlight {
+      display: flex;
+      gap: 28px;
+      margin: 28px 0;
+    }
+
+    .pill {
+      background: white;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .hero-image {
+      flex: 0.9;
+      text-align: center;
+      background: rgba(194, 122, 46, 0.08);
+      border-radius: 48px;
+      padding: 32px 20px;
+    }
+
+    .hero-image i {
+      font-size: 7rem;
+      color: #c27a2e;
+    }
+
+    /* section style */
+    .section {
+      padding: 70px 0;
+      border-bottom: 1px solid #eeeae5;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #c27a2e;
+      border-radius: 4px;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 24px;
+      flex: 1;
+      min-width: 200px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      transition: 0.25s;
+      border: 1px solid #f5ede3;
+      text-align: center;
+    }
+
+    .feature-card i {
+      font-size: 2.4rem;
+      color: #c27a2e;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* contact grid */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .contact-details {
+      flex: 1;
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.03);
+      border: 1px solid #f0e4d8;
+    }
+
+    .contact-form {
+      flex: 1;
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.03);
+      border: 1px solid #f0e4d8;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid #e0d6cc;
+      border-radius: 28px;
+      font-family: 'Inter', sans-serif;
+      background: #fffdfb;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #c27a2e;
+    }
+
+    .info-line {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .info-line i {
+      width: 28px;
+      color: #c27a2e;
+      font-size: 1.2rem;
+    }
+
+    .map-placeholder {
+      background: #f5efe8;
+      border-radius: 28px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* legal card */
+    .legal-card {
+      background: white;
+      border-radius: 32px;
+      padding: 36px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #eee5dd;
+    }
+
+    .legal-card h3 {
+      font-size: 1.6rem;
+      margin: 28px 0 12px 0;
+      font-weight: 600;
+    }
+
+    .legal-card h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .legal-card p, .legal-card li {
+      margin-bottom: 12px;
+      color: #3a3a48;
+    }
+
+    .legal-card ul {
+      padding-left: 26px;
+      margin: 16px 0;
+    }
+
+    hr {
+      margin: 30px 0;
+      border-color: #ede3d9;
+    }
+
+    /* footer */
+    footer {
+      background: #121217;
+      color: #cccbd6;
+      padding: 48px 0 28px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #c27a2e;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col a {
+      color: #cccbd6;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-col a:hover {
+      color: #c27a2e;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #2a2a35;
+      padding-top: 28px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 2.2rem; }
+      .nav-wrapper { flex-direction: column; align-items: flex-start; }
+      .container { padding: 0 20px; }
+      .section-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav-wrapper">
+    <div class="logo-area">
+      <div class="brand-name">J B MASTER</div>
+      <div class="brand-tag">Fashion Redefined</div>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+    </div>
+    <div>
+      <a href="#contact" class="btn-primary">✨ Shop Collection</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HOME SECTION -->
+  <section id="home">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Style that speaks.<br>Comfort that stays.</h1>
+          <p><strong>J B MASTER</strong> is a fashion-focused clothing brand delivering stylish, comfortable, and quality apparel for modern customers. From casual wear to trendy outfits — we blend premium quality with affordable pricing.</p>
+          <div class="hero-highlight">
+            <span class="pill"><i class="fas fa-check-circle"></i> Premium Fabrics</span>
+            <span class="pill"><i class="fas fa-tag"></i> Affordable Luxury</span>
+            <span class="pill"><i class="fas fa-leaf"></i> Modern Designs</span>
+          </div>
+          <a href="#contact" class="btn-primary" style="margin-top: 12px; display: inline-block;">Explore Latest Collection →</a>
+        </div>
+        <div class="hero-image">
+          <i class="fas fa-tshirt"></i>
+          <i class="fas fa-shopping-bag" style="margin-left: 20px;"></i>
+          <p style="margin-top: 20px; font-weight: 500;">Confidence. Personality. Everyday comfort.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- brand pillars / features -->
+    <div class="container section">
+      <h2 class="section-title">Why J B MASTER?</h2>
+      <div class="card-grid">
+        <div class="feature-card"><i class="fas fa-gem"></i><h3>Premium Quality</h3><p>High-grade fabrics that feel great and last longer.</p></div>
+        <div class="feature-card"><i class="fas fa-chart-line"></i><h3>Trendy Designs</h3><p>Fresh collections matching the latest global fashion.</p></div>
+        <div class="feature-card"><i class="fas fa-heart"></i><h3>Customer First</h3><p>Your satisfaction is our top priority, always.</p></div>
+        <div class="feature-card"><i class="fas fa-wallet"></i><h3>Value for Money</h3><p>Affordable pricing without compromising on style.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PAGE -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Connect With Us</h2>
+      <div class="contact-grid">
+        <div class="contact-details">
+          <h3 style="font-size: 1.8rem; margin-bottom: 16px;">📍 Visit Our Store</h3>
+          <div class="info-line"><i class="fas fa-map-marker-alt"></i> <span><strong>J B MASTER</strong><br>6, TEN 11 COMPLEX, Ground Floor, C.G. Road, Ahmedabad, Gujarat - 380009</span></div>
+          <div class="info-line"><i class="fas fa-phone-alt"></i> <span><strong>Phone:</strong> 9825097887</span></div>
+          <div class="info-line"><i class="fas fa-envelope"></i> <span><strong>Email:</strong> jbmaster1959@gmail.com</span></div>
+          <div class="info-line"><i class="fas fa-clock"></i> <span><strong>Business Hours:</strong> Mon-Sat: 10:30 AM – 8:30 PM | Sunday: 11 AM – 6 PM</span></div>
+          <div class="map-placeholder">
+            <i class="fas fa-store"></i> Located at CG Road, opposite food court landmark | Easy access, ample parking nearby.
+          </div>
+          <hr>
+          <p><strong>Wholesale / Retail Inquiries:</strong> For bulk orders, franchise, or collaboration, reach out to us directly. We respond within 24 hours.</p>
+        </div>
+        <div class="contact-form">
+          <h3>Send us a message</h3>
+          <form id="contactForm" action="#">
+            <div class="form-group"><input type="text" id="fullname" placeholder="Full Name *" required></div>
+            <div class="form-group"><input type="email" id="emailid" placeholder="Email Address *" required></div>
+            <div class="form-group"><input type="tel" id="mobile" placeholder="Phone Number"></div>
+            <div class="form-group"><textarea rows="4" id="message" placeholder="Tell us about your style needs / query *" required></textarea></div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Message <i class="fas fa-paper-plane"></i></button>
+            <p id="formFeedback" style="margin-top: 16px; font-size: 0.85rem;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section id="privacy" class="section">
+    <div class="container">
+      <h2 class="section-title">Privacy Policy</h2>
+      <div class="legal-card">
+        <p><strong>Last Updated:</strong> May 2025 – J B MASTER (“Company”, “we”, “our”, “us”) respects your privacy. This Privacy Policy describes how we collect, use, and protect your personal data when you interact with our brand via website, store visits, phone, or email.</p>
+        <h3>1. Information We Collect</h3>
+        <p>We may collect personal information such as your name, email address, phone number, shipping/billing address, and any details you provide in inquiries. We also keep purchase history to improve services.</p>
+        <h3>2. How We Use Your Information</h3>
+        <p>- Process orders, returns, and provide customer support.<br>- Send updates about new collections, offers & fashion alerts (only if opted in).<br>- Improve our product range and personalize shopping experience.<br>- We never sell or rent personal data to third parties.</p>
+        <h3>3. Data Security</h3>
+        <p>We use secure systems and encrypted storage to protect your information. However, no online transmission is 100% secure.</p>
+        <h3>4. Sharing of Information</h3>
+        <p>We may share data with delivery partners to fulfill orders, or if required by law. Otherwise, we do not share with external marketers.</p>
+        <h3>5. Your Rights</h3>
+        <p>You may request access, correction, or deletion of your data by contacting us at <strong>jbmaster1959@gmail.com</strong>. You can also unsubscribe from marketing communications.</p>
+        <p><em>For any privacy concerns, please reach out to our Ahmedabad store or email us.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS AND CONDITIONS -->
+  <section id="terms" class="section">
+    <div class="container">
+      <h2 class="section-title">Terms & Conditions</h2>
+      <div class="legal-card">
+        <p>Welcome to J B MASTER. By accessing our website, visiting our store, or purchasing products, you agree to the following terms.</p>
+        <h3>1. Products & Pricing</h3>
+        <p>We strive to display accurate colors, fabric compositions, and sizes. However, slight variations may occur. All prices are in INR and are subject to change without prior notice. Taxes as applicable.</p>
+        <h3>2. Orders & Payments</h3>
+        <p>Orders are subject to availability. We reserve the right to cancel any order due to stock limitations or pricing errors. Payments are processed securely through authorized gateways.</p>
+        <h3>3. Exchange & Returns</h3>
+        <p>We offer size exchanges or store credit within 7 days of delivery, provided product is unused with original tags. No returns on final-sale items. For defective items, please contact us within 48 hours.</p>
+        <h3>4. Shipping & Delivery</h3>
+        <p>We ship across India. Delivery timelines vary by location. Risk of loss passes to buyer upon delivery. Please inspect package upon arrival.</p>
+        <h3>5. Intellectual Property</h3>
+        <p>The brand name “J B MASTER”, logo, designs, and website content are our property. Reproduction without permission is prohibited.</p>
+        <h3>6. Governing Law</h3>
+        <p>These terms are governed by the laws of India, and any disputes shall be subject to the exclusive jurisdiction of courts in Ahmedabad, Gujarat.</p>
+        <p><strong>For any questions, contact us at 9825097887 or email jbmaster1959@gmail.com</strong></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER WITH COPYRIGHT -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>J B MASTER</h4>
+        <p>Fashion-focused clothing brand that blends confidence, comfort, and modern trends. Quality fabrics, affordable prices.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms & Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p><i class="fas fa-map-pin"></i> 6, TEN 11 COMPLEX, Ground Floor, C.G. Road, Ahmedabad, Gujarat - 380009</p>
+        <p><i class="fas fa-phone"></i> 9825097887</p>
+        <p><i class="fas fa-envelope"></i> jbmaster1959@gmail.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 J B MASTER – All Rights Reserved. | Fashion That Speaks | Designed for modern wardrobes.
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // smooth scroll for all internal anchor links
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Contact form simulation (demo purpose)
+    const form = document.getElementById('contactForm');
+    const feedbackSpan = document.getElementById('formFeedback');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('fullname')?.value.trim();
+        const email = document.getElementById('emailid')?.value.trim();
+        const msg = document.getElementById('message')?.value.trim();
+        if (!name || !email || !msg) {
+          feedbackSpan.innerHTML = '❌ Please fill in Name, Email, and Message fields.';
+          feedbackSpan.style.color = '#c0392b';
+          return;
+        }
+        const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          feedbackSpan.innerHTML = '❌ Please enter a valid email address.';
+          feedbackSpan.style.color = '#c0392b';
+          return;
+        }
+        feedbackSpan.innerHTML = '✓ Thank you, ' + name + '! Your message has been sent. Our team will contact you shortly.';
+        feedbackSpan.style.color = '#2c6e2f';
+        form.reset();
+        setTimeout(() => {
+          feedbackSpan.innerHTML = '';
+        }, 5000);
+      });
+    }
+
+    // highlight active nav (simple)
+    const sections = ['home', 'contact', 'privacy', 'terms'];
+    const navItems = {
+      home: document.querySelector('a[href="#home"]'),
+      contact: document.querySelector('a[href="#contact"]'),
+      privacy: document.querySelector('a[href="#privacy"]'),
+      terms: document.querySelector('a[href="#terms"]')
+    };
+    function setActiveNav() {
+      let current = '';
+      const scrollPosition = window.scrollY + 130;
+      for (let sec of sections) {
+        const el = document.getElementById(sec);
+        if (el) {
+          const offsetTop = el.offsetTop;
+          const offsetBottom = offsetTop + el.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            current = sec;
+            break;
+          }
+        }
+      }
+      Object.keys(navItems).forEach(sec => {
+        const link = navItems[sec];
+        if (link) {
+          if (current === sec) {
+            link.style.color = '#c27a2e';
+            link.style.fontWeight = '700';
+          } else {
+            link.style.color = '#2c2c3a';
+            link.style.fontWeight = '500';
+          }
+        }
+      });
+    }
+    window.addEventListener('scroll', setActiveNav);
+    window.addEventListener('load', setActiveNav);
+  })();
+</script>
+</body>
+</html>
